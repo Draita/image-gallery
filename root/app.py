@@ -7,6 +7,10 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def main():
+    return "works"
+
 @app.route('/images/<string:type>/<int:id>', methods=['GET'])
 def add_activity(type, id):
     dir = '../images/'+type+'/'
