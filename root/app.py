@@ -11,7 +11,7 @@ CORS(app)
 
 @app.route('/images/<string:type>/<int:id>', methods=['GET'])
 def add_activity(type, id):
-    dir = 'images/'+type+'/'
+    dir = '../images/'+type+'/'
     image_list = os.listdir(dir)
 
     im = Image.open(dir + image_list[id])
@@ -20,14 +20,7 @@ def add_activity(type, id):
 
     img_io = BytesIO()
 
-    im.save(img_io, 'JPEG', quality=20)
+    im.save(img_io, 'JPEG', quality=50)
     img_io.seek(0)
 
     return send_file(img_io, mimetype='image/jpeg')
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    app.run(debug=True)
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
