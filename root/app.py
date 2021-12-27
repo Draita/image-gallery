@@ -1,6 +1,4 @@
 import os;
-import sqlite3;
-import json
 from io import BytesIO
 
 from flask import Flask, send_file, send_from_directory, safe_join, abort
