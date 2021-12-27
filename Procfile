@@ -1,1 +1,1 @@
-web:gunicorn root.app:appheroku ps:scale web=1
+web:gunico  heroku ps:scale web=1rn root.app:appheroku ps:scale web=1
